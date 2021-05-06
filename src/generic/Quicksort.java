@@ -33,10 +33,8 @@ public class Quicksort {
                 j--;
             }
         }
-        if (low < j)
-            quicksort(low, j);
-        if (i < high)
-            quicksort(i, high);
+        if (low < j) quicksort(low, j);
+        if (i < high) quicksort(i, high);
     }
 
     private void exchange(int i, int j) {
