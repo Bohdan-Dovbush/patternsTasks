@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="Collection.QueueExampleTests qe" />
+      <entry_point TYPE="field" FQNAME="Collection.QueueExample productsQueue" />
+      <entry_point TYPE="field" FQNAME="Collection.QueueExampleTests productsQueue" />
+    </entry_points>
+    <pattern value="GeneratingsPatterns.AbstractFactory.AbstractFactoryPatternsMain" />
+    <pattern value="StructuralsPatterns.Adapter.AdapterPatternsMain" />
+    <pattern value="StructuralsPatterns.Decorator.Role.RoleDecorator" method="addAnotherRoles" />
+    <pattern value="BihavioralsPatterns.Observer.Observed" method="addObserver" />
+    <pattern value="BihavioralsPatterns.Mediator.Role.AdminRole" />
+    <pattern value="StructuralsPatterns.Adapter.AdvancedPayGate.AdvancedPayGate" />
+    <pattern value="StructuralsPatterns.Bridge.BridgePatternsMain" />
+    <pattern value="BihavioralsPatterns.ChainOfResponsibility.ChainPatternsMain" />
+    <pattern value="GeneratingsPatterns.AbstractFactory.AbstractFact.ClientFactory" />
+    <pattern value="BihavioralsPatterns.Iterator.Collection" />
+    <pattern value="Collection.CollectionConcepts" />
+    <pattern value="Collection.CollectionPersonMain" />
+    <pattern value="BihavioralsPatterns.Command.CommandPatternsMain" />
+    <pattern value="Collection.PersonComparatorTest" method="compare" />
+    <pattern value="Collection.PersonTest" method="compareTo" />
+    <pattern value="StructuralsPatterns.Composite.CompositeClientRole" />
+    <pattern value="StructuralsPatterns.Composite.CompositePatternsMain" />
+    <pattern value="BihavioralsPatterns.Visitor.Family" method="create" />
+    <pattern value="StructuralsPatterns.Bridge.Role.Role" method="createRole" />
+    <pattern value="StructuralsPatterns.Decorator.DecoratorPatternsMain" />
+    <pattern value="Collection.PersonTest" method="dependentAssertions" />
+    <pattern value="StructuralsPatterns.Adapter.PaymentGate.PaymentGate" method="doPay" />
+    <pattern value="StructuralsPatterns.Facade.FacadePatternsMain" />
+    <pattern value="GeneratingsPatterns.Factory.FactoryPatternsMain" />
+    <pattern value="GeneratingsPatterns.AbstractFactory.FactoryProducer" />
+    <pattern value="GeneratingsPatterns.AbstractFactory.FactoryProducer" method="FactoryProducer" />
+    <pattern value="BihavioralsPatterns.ReVisitor.Family" />
+    <pattern value="BihavioralsPatterns.Visitor.Family" />
+    <pattern value="GeneratingsPatterns.Client.FirstClient" />
+    <pattern value="StructuralsPatterns.Flyweight.FlyweightPatternsMain" />
+    <pattern value="GeneratingsPatterns.AbstractFactory.FactoryProducer" method="getClientAndGetRole" />
+    <pattern value="BihavioralsPatterns.Iterator.Collection" method="getIterator" />
+    <pattern value="BihavioralsPatterns.Mediator.Role.AdminRole" method="getName" />
+    <pattern value="Collection.Helper.Product" method="getName" />
+    <pattern value="BihavioralsPatterns.Mediator.Role.UserRole" method="getName" />
+    <pattern value="StructuralsPatterns.Facade.Service.RoleService" method="getRole" />
+    <pattern value="BihavioralsPatterns.Iterator.JavaDeveloper" method="getSkills" />
+    <pattern value="Collection.PersonTest" method="groupedAssertions" />
+    <pattern value="Collection.HashMapExample" />
+    <pattern value="Collection.PersonComparatorTest" />
+    <pattern value="Collection.PersonTest" />
+    <pattern value="Collection.QueueExampleTests" />
+    <pattern value="GeneratingsPatterns.Client.SecondClient" />
+    <pattern value="Collection.SetExampleTest" />
+    <pattern value="BihavioralsPatterns.Interpreter.InterpreterPatternMain" />
+    <pattern value="BihavioralsPatterns.Iterator.IteratorPatternsMain" />
+    <pattern value="BihavioralsPatterns.Iterator.JavaDeveloper" />
+    <pattern value="Collection.ListExample" />
+    <pattern value="GeneratingsPatterns.AbstractFactory.AbstractFactoryPatternsMain" method="main" />
+    <pattern value="StructuralsPatterns.Adapter.AdapterPatternsMain" method="main" />
+    <pattern value="StructuralsPatterns.Bridge.BridgePatternsMain" method="main" />
+    <pattern value="BihavioralsPatterns.ChainOfResponsibility.ChainPatternsMain" method="main" />
+    <pattern value="Collection.CollectionConcepts" method="main" />
+    <pattern value="Collection.CollectionPersonMain" method="main" />
+    <pattern value="BihavioralsPatterns.Command.CommandPatternsMain" method="main" />
+    <pattern value="StructuralsPatterns.Composite.CompositePatternsMain" method="main" />
+    <pattern value="StructuralsPatterns.Decorator.DecoratorPatternsMain" method="main" />
+    <pattern value="StructuralsPatterns.Facade.FacadePatternsMain" method="main" />
+    <pattern value="GeneratingsPatterns.Factory.FactoryPatternsMain" method="main" />
+    <pattern value="StructuralsPatterns.Flyweight.FlyweightPatternsMain" method="main" />
+    <pattern value="Collection.HashMapExample" method="main" />
+    <pattern value="BihavioralsPatterns.Interpreter.InterpreterPatternMain" method="main" />
+    <pattern value="BihavioralsPatterns.Iterator.IteratorPatternsMain" method="main" />
+    <pattern value="Collection.ListExample" method="main" />
+    <pattern value="BihavioralsPatterns.Mediator.MediatorPatternsMain" method="main" />
+    <pattern value="BihavioralsPatterns.Memento.MementoPatternsMain" method="main" />
+    <pattern value="BihavioralsPatterns.Observer.ObserverPatternsMain" method="main" />
+    <pattern value="GeneratingsPatterns.Prototype.PrototypePatternsMain" method="main" />
+    <pattern value="StructuralsPatterns.Proxy.ProxyPatternsMain" method="main" />
+    <pattern value="Collection.QueueExample" method="main" />
+    <pattern value="GeneratingsPatterns.Builder.RoleBuilderMain" method="main" />
+    <pattern value="Collection.SetExample" method="main" />
+    <pattern value="GeneratingsPatterns.Singleton.SingletonClassMain" method="main" />
+    <pattern value="BihavioralsPatterns.State.StatePatternsMain" method="main" />
+    <pattern value="BihavioralsPatterns.Strategy.StrategyPatternsMain" method="main" />
+    <pattern value="BihavioralsPatterns.TemplateMethod.TemplateMethodPatternsMain" method="main" />
+    <pattern value="BihavioralsPatterns.Visitor.VisitorPatternsMain" method="main" />
+    <pattern value="BihavioralsPatterns.ReVisitor.VisitorPatternsMain" method="main" />
+    <pattern value="StructuralsPatterns.Adapter.AdvancedPayGate.AdvancedPayGate" method="makePay" />
+    <pattern value="BihavioralsPatterns.Mediator.MediatorPatternsMain" />
+    <pattern value="BihavioralsPatterns.Memento.MementoPatternsMain" />
+    <pattern value="Collection.Helper.MyCondition" />
+    <pattern value="Collection.Helper.MyCondition" method="MyCondition" />
+    <pattern value="BihavioralsPatterns.Observer.Observed" method="notifyObservers" />
+    <pattern value="BihavioralsPatterns.Observer.Observed" />
+    <pattern value="BihavioralsPatterns.Observer.ObserverPatternsMain" />
+    <pattern value="StructuralsPatterns.Adapter.PaymentGate.PaymentGate" />
+    <pattern value="Collection.Helper.Print" />
+    <pattern value="Collection.Helper.Print" method="Print" />
+    <pattern value="Collection.Helper.Product" />
+    <pattern value="GeneratingsPatterns.Prototype.PrototypePatternsMain" />
+    <pattern value="StructuralsPatterns.Proxy.ProxyPatternsMain" />
+    <pattern value="Collection.QueueExample" />
+    <pattern value="StructuralsPatterns.Composite.CompositeClientRole" method="remove" />
+    <pattern value="BihavioralsPatterns.Observer.Observed" method="removeObserver" />
+    <pattern value="StructuralsPatterns.Bridge.Role.Role" />
+    <pattern value="GeneratingsPatterns.Builder.RoleBuilderMain" />
+    <pattern value="StructuralsPatterns.Decorator.Role.RoleDecorator" />
+    <pattern value="StructuralsPatterns.Facade.Service.RoleService" />
+    <pattern value="Collection.Helper.MyCondition" method="setAction" />
+    <pattern value="BihavioralsPatterns.ReVisitor.Family" method="setAction" />
+    <pattern value="Collection.Helper.MyCondition" method="setCondition" />
+    <pattern value="Collection.Helper.MyCondition" method="setConditions" />
+    <pattern value="Collection.SetExample" />
+    <pattern value="Collection.Helper.Store" method="setId" />
+    <pattern value="BihavioralsPatterns.Mediator.Role.AdminRole" method="setName" />
+    <pattern value="BihavioralsPatterns.Iterator.JavaDeveloper" method="setName" />
+    <pattern value="Collection.Helper.Product" method="setName" />
+    <pattern value="Collection.Helper.Store" method="setName" />
+    <pattern value="BihavioralsPatterns.Mediator.Role.UserRole" method="setName" />
+    <pattern value="BihavioralsPatterns.Iterator.JavaDeveloper" method="setSkills" />
+    <pattern value="Collection.QueueExampleTests" method="setUp" />
+    <pattern value="GeneratingsPatterns.Singleton.SingletonClassFirst" method="setUp" />
+    <pattern value="GeneratingsPatterns.Singleton.SingletonClassSecond" method="setUp" />
+    <pattern value="GeneratingsPatterns.Singleton.SingletonClassFirst" />
+    <pattern value="GeneratingsPatterns.Singleton.SingletonClassMain" />
+    <pattern value="GeneratingsPatterns.Singleton.SingletonClassSecond" />
+    <pattern value="BihavioralsPatterns.State.StatePatternsMain" />
+    <pattern value="Collection.Helper.Store" />
+    <pattern value="BihavioralsPatterns.Strategy.StrategyPatternsMain" />
+    <pattern value="BihavioralsPatterns.TemplateMethod.TemplateMethodPatternsMain" />
+    <pattern value="Collection.SetExampleTest" method="testContains" />
+    <pattern value="Collection.SetExampleTest" method="testIsEmpty" />
+    <pattern value="Collection.QueueExampleTests" method="testQueueIsEmpty" />
+    <pattern value="Collection.QueueExampleTests" method="testQueueIsNotEmpty" />
+    <pattern value="Collection.SetExampleTest" method="testRemove" />
+    <pattern value="Collection.SetExampleTest" method="testSize" />
+    <pattern value="StructuralsPatterns.Facade.Service.TransferService" method="transfer" />
+    <pattern value="StructuralsPatterns.Facade.Service.TransferService" />
+    <pattern value="BihavioralsPatterns.Mediator.Role.UserRole" />
+    <pattern value="BihavioralsPatterns.ReVisitor.VisitorPatternsMain" />
+    <pattern value="BihavioralsPatterns.Visitor.VisitorPatternsMain" />
+    <pattern value="StructuralsPatterns.Bridge.Role.AdminRole" method="createRole" />
+    <pattern value="Collection.QueueExample" method="addProductsToTheQueue" />
+    <pattern value="StructuralsPatterns.Adapter.AdvancedPayGate.AdvancedPayGateAdapter" />
+    <pattern value="StructuralsPatterns.Facade.Service.ClientServiceFacadeImpl" />
+    <pattern value="BihavioralsPatterns.Visitor.FatherFamily" method="create" />
+    <pattern value="BihavioralsPatterns.Visitor.SonFamily" method="create" />
+    <pattern value="StructuralsPatterns.Bridge.Role.UserRole" method="createRole" />
+    <pattern value="StructuralsPatterns.Adapter.PaymentGate.PaymentGateImpl" method="doPay" />
+    <pattern value="BihavioralsPatterns.Visitor.FatherFamily" />
+    <pattern value="Collection.QueueExample" method="getProductsQueue" />
+    <pattern value="BihavioralsPatterns.Observer.JavaDeveloperJobSite" />
+    <pattern value="StructuralsPatterns.Adapter.AdvancedPayGate.AdvancedPayGateAdapter" method="makePay" />
+    <pattern value="StructuralsPatterns.Facade.Service.ClientServiceFacadeImpl" method="moneyTransfer" />
+    <pattern value="StructuralsPatterns.Adapter.PaymentGate.PaymentGateImpl" />
+    <pattern value="BihavioralsPatterns.Observer.JavaDeveloperJobSite" method="removeObserver" />
+    <pattern value="BihavioralsPatterns.Visitor.SonFamily" />
+    <pattern value="StructuralsPatterns.Bridge.Role.UserRole" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11.0.5" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
