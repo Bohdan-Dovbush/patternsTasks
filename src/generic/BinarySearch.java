@@ -3,6 +3,28 @@ package generic;
 import java.util.Comparator;
 
 public class BinarySearch<T> {
+
+    T[] objects;
+    Comparator<? super T> comparator;
+    private int first;
+    private int last;
+
+    public BinarySearch<T> in(T[] objects) {
+        this.objects = objects;
+        this.first = 0;
+        this.last = objects.length;
+        return this;
+    }
+
+    public BinarySearch<T> comparator(Comparator<? super T> comparator) {
+        this.comparator = comparator;
+        return this;
+    }
+
+    public Result search(T x) {
+        return search(objects, first, last, x, comparator);
+    }
+
     public static class Result {
         public final boolean success;
         public final int index;
