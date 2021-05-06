@@ -3,7 +3,6 @@ package generic;
 public class Quicksort {
 
     private int[] numbers;
-    private int number;
 
     public void sort(int[] values) {
         // Check for empty or null array
@@ -11,7 +10,7 @@ public class Quicksort {
             return;
         }
         this.numbers = values;
-        number = values.length;
+        int number = values.length;
         quicksort(0, number - 1);
     }
 
