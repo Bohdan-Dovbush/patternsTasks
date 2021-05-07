@@ -1,2 +1,10 @@
-out
-.idea
+/.idea/
+/lib/
+/out/
+/out/
+/util1.uml
+/util.uml
+/patternsTasks.iml
+/Patterns-2-2.drawio
+/Patterns-2.drawio
+/Package util.png
