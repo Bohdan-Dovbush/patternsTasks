@@ -7,7 +7,6 @@ public class Tree {
 
     public Tree(int val) {
         this.val = val;
-
     }
 
     public Tree(int val, Tree left, Tree right) {

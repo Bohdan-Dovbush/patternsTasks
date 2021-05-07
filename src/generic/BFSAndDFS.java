@@ -5,20 +5,6 @@ import generic.util.SimpleStack;
 import generic.util.Tree;
 
 public class BFSAndDFS {
-    public static void main(String[] params) {
-        Tree root =
-                new Tree(20,
-                        new Tree(7,
-                                new Tree(4, null, new Tree(6)),
-                                new Tree(9)),
-                        new Tree(35,
-                                new Tree(31, new Tree(28), null),
-                                new Tree(40, new Tree(38), new Tree(52))));
-
-        System.out.println(wide(root));
-        System.out.println();
-        System.out.println(deep(root));
-    }
 
     public static String deep(Tree root) {
         SimpleStack<Tree> stack = new SimpleStack<>();
