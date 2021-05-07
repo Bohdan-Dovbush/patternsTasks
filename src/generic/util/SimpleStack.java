@@ -3,7 +3,7 @@ package generic.util;
 import java.util.ArrayList;
 
 public class SimpleStack<T> implements Stack<T> {
-    private ArrayList<T> list = new ArrayList<>();
+    private final ArrayList<T> list = new ArrayList<>();
 
     @Override
     public void push(T item) {

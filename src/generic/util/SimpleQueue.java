@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class SimpleQueue<T> implements Queue<T> {
 
-    private ArrayList<T> list = new ArrayList<>();
+    private final ArrayList<T> list = new ArrayList<>();
 
     @Override
     public void add(T item) {
