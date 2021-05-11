@@ -12,7 +12,7 @@ import static org.springframework.test.util.AssertionErrors.assertNotEquals;
 public class TreeMapTest extends TestCase {
 
     TreeMap tm;
-    Object[] objArray = new Object[1000];
+    final Object[] objArray = new Object[1000];
 
     @BeforeEach
     protected void setUp() {

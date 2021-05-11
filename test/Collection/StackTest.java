@@ -21,11 +21,11 @@ public class StackTest extends TestCase {
     public void testEmpty() {
         assertTrue("New stack answers non-empty", s.empty());
         s.push("blah");
-        assertTrue("Stack should not be empty but answers empty", !s.empty());
+        assertFalse("Stack should not be empty but answers empty", s.empty());
         s.pop();
         assertTrue("Stack should be empty but answers non-empty", s.empty());
         s.push(null);
-        assertTrue("Stack with null should not be empty but answers empty", !s.empty());
+        assertFalse("Stack with null should not be empty but answers empty", s.empty());
     }
 
     @Test
@@ -34,12 +34,12 @@ public class StackTest extends TestCase {
         String item2 = "Two";
         String item3 = "Tree";
         s.push(item1);
-        assertTrue("Peek did not return top item when it was the only item", s.peek() == item1);
+        assertSame("Peek did not return top item when it was the only item", s.peek(), item1);
         s.push(item2);
         s.push(item3);
-        assertTrue("Peek did not return top item amoung many other items", s.peek() == item3);
+        assertSame("Peek did not return top item amount many other items", s.peek(), item3);
         s.pop();
-        assertTrue("Peek did not return top item after a pop", s.pop() == item2);
+        assertSame("Peek did not return top item after a pop", s.pop(), item2);
         s.push(null);
         assertNull("Peek did not return top item (wanted: null)", s.peek());
         s.pop();
@@ -61,13 +61,13 @@ public class StackTest extends TestCase {
         s.push(item2);
         try {
             lastPopped = s.pop();
-            assertTrue("a) Pop did not return top item", lastPopped == item2);
+            assertSame("a) Pop did not return top item", lastPopped, item2);
         } catch (EmptyStackException e) {
             fail("a) Pop threw EmptyStackException when stack should not have been empty");
         }
         try {
             lastPopped = s.pop();
-            assertTrue("b) Pop did not return top item", lastPopped == item1);
+            assertSame("b) Pop did not return top item", lastPopped, item1);
         } catch (EmptyStackException e) {
             fail("b) Pop threw EmptyStackException when stack should not have been empty");
         }
@@ -80,9 +80,9 @@ public class StackTest extends TestCase {
         }
         try {
             lastPopped = s.pop();
+            assertNotNull(lastPopped);
             fail("d) Pop did not throw EmptyStackException when stack should have been empty");
-        } catch (EmptyStackException e) {
-            return;
+        } catch (EmptyStackException e) {//
         }
     }
 
@@ -90,8 +90,8 @@ public class StackTest extends TestCase {
     public void testPush() {
         Object [] array = {0, new Object()};
         Stack<Object> stack = new Stack<>();
-        for(int i = 0; i < array.length; i++) {
-            stack.push(array[i]);
+        for (Object o : array) {
+            stack.push(o);
         }
         for(int i = 0; i < array.length; i++) {
             assertEquals(array.length - i, stack.search(array[i]));

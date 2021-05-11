@@ -8,8 +8,8 @@ import java.util.*;
 
 public class WeakHashMapTest extends TestCase {
 
-    Object[] keyArray = new Object[100];
-    Object[] valueArray = new Object[100];
+    final Object[] keyArray = new Object[100];
+    final Object[] valueArray = new Object[100];
     WeakHashMap<Object, Object> whm;
 
     @BeforeEach

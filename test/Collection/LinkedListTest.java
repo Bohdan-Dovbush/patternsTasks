@@ -19,15 +19,13 @@ public class LinkedListTest extends TestCase {
             objArray[i] = i;
         }
         ll = new LinkedList();
-        for (int i = 0; i < objArray.length; i++) {
-            ll.add(objArray[i]);
-        }
+        Collections.addAll(ll, objArray);
     }
     @Test
     public void testAdd() {
         Object o;
         ll.add(50, o = "Test");
-        assertTrue("Failed to add Object>: " + ll.get(50).toString(), ll.get(50) == o);
+        assertSame("Failed to add Object>: " + ll.get(50).toString(), ll.get(50), o);
         assertTrue("Failed to fix up list after insert",
                 ll.get(51) == objArray[50] && (ll.get(52) == objArray[51]));
         ll.add(50, null);
@@ -58,7 +56,7 @@ public class LinkedListTest extends TestCase {
         }
 
         ll.add(o = new Object());
-        assertTrue("Failed to add Object", ll.getLast() == o);
+        assertSame("Failed to add Object", ll.getLast(), o);
         ll.add(null);
         assertNull("Did not add null correctly", ll.get(ll.size() - 1));
     }
@@ -68,12 +66,11 @@ public class LinkedListTest extends TestCase {
         ll.addAll(50, (Collection<Object>) ll.clone());
         assertEquals("Returned incorrect size after adding to existing list", 200, ll.size());
         for (int i = 0; i < 50; i++)
-            assertTrue("Manipulated elements < index", ll.get(i) == objArray[i]);
+            assertSame("Manipulated elements < index", ll.get(i), objArray[i]);
         for (int i = 0; i >= 50 && (i < 150); i++)
-            assertTrue("Failed to ad elements properly",
-                    ll.get(i) == objArray[i - 50]);
+            assertSame("Failed to ad elements properly", ll.get(i), objArray[i - 50]);
         for (int i = 0; i >= 150 && (i < 200); i++)
-            assertTrue("Failed to ad elements properly", ll.get(i) == objArray[i - 100]);
+            assertSame("Failed to ad elements properly", ll.get(i), objArray[i - 100]);
         List<String> myList = new LinkedList<>();
         myList.add(null);
         myList.add("Blah");
@@ -105,18 +102,17 @@ public class LinkedListTest extends TestCase {
             //expected
         }
 
-        List l = new ArrayList();
         try {
-            l.addAll((Collection) ll.clone());
+            List l = new ArrayList((Collection) ll.clone());
             for (int i = 0; i < ll.size(); i++)
-                assertTrue("Failed to add elements properly", l.get(i).equals(ll.get(i)));
+                assertEquals("Failed to add elements properly", l.get(i), ll.get(i));
 
         ll.addAll((Collection<Object>) ll.clone());
         assertEquals("Returned incorrect siZe after adding to existing list", 410, ll.size());
         for (int i = 0; i < 100; i++) {
-            assertTrue("Added to list in incorrect order", ll.get(i).equals(l.get(i)));
+            assertEquals("Added to list in incorrect order", ll.get(i), l.get(i));
             try {
-                assertTrue("Failed to add to existing list", ll.get(i + 100).equals(l.get(i)));
+                assertEquals("Failed to add to existing list", ll.get(i + 100), l.get(i));
             } catch (AssertionFailedError e) {
                 //expected
             }
@@ -152,7 +148,7 @@ public class LinkedListTest extends TestCase {
     public void testAddFirst() {
         Object o;
         ll.addFirst(o = new Object());
-        assertTrue("Failed to add Object", ll.getFirst() == o);
+        assertSame("Failed to add Object", ll.getFirst(), o);
         ll.addFirst(null);
         assertNull("Failed to add null", ll.getFirst());
     }
@@ -161,7 +157,7 @@ public class LinkedListTest extends TestCase {
     public void testAddLast() {
         Object o;
         ll.addLast(o = new Object());
-        assertTrue("Failed to add Object", ll.getLast() == o);
+        assertSame("Failed to add Object", ll.getLast(), o);
         ll.addLast(null);
         assertNull("Failed to add null", ll.getLast());
     }
@@ -169,27 +165,26 @@ public class LinkedListTest extends TestCase {
     @Test
     public void testClear() {
         ll.clear();
-        for (int i = 0; i < ll.size(); i++)
-            assertNull("Failed to clear list", ll.get(i));
+        for (Object o : ll) assertNull("Failed to clear list", o);
     }
 
     @Test
     public void testClone() {
         Object x = ll.clone();
-        assertTrue("Cloned list was inequal to cloned", x.equals(ll));
+        assertEquals("Cloned list was inequal to cloned", x, ll);
         for (int i = 0; i < ll.size(); i++)
-            assertTrue("Cloned list contains incorrect elements", ll.get(i).equals(((LinkedList) x).get(i)));
+            assertEquals("Cloned list contains incorrect elements", ll.get(i), ((LinkedList) x).get(i));
         ll.addFirst(null);
         x = ll.clone();
-        assertTrue("List with a null did not clone properly", ll.equals(x));
+        assertEquals("List with a null did not clone properly", ll, x);
     }
 
     @Test
     public void testContains() {
         assertTrue("Returned false for valid element", ll.contains(objArray[99]));
         assertTrue("Returned false for equal element", ll.contains(8));
-        assertTrue("Returned true for invalid element", !ll.contains(new Object()));
-        assertTrue("Should not contain null", !ll.contains(null));
+        assertFalse("Returned true for invalid element", ll.contains(new Object()));
+        assertFalse("Should not contain null", ll.contains(null));
         ll.add(25, null);
         assertTrue("Should contain null", ll.contains(null));
     }
@@ -211,22 +206,22 @@ public class LinkedListTest extends TestCase {
         while (i2.hasNext()) {
             if (n == 0 || n == objArray.length - 1) {
                 if (n == 0)
-                    assertTrue("First element claimed to have a previous", !i2.hasPrevious());
+                    assertFalse("First element claimed to have a previous", i2.hasPrevious());
                 if (n == objArray.length)
-                    assertTrue("Last element claimed to have next", !i2.hasNext());
+                    assertFalse("Last element claimed to have next", i2.hasNext());
             }
             elm = i2.next();
-            assertTrue("Iterator returned elements in wrong order", elm == objArray[n]);
+            assertSame("Iterator returned elements in wrong order", elm, objArray[n]);
             if (n > 0 && n < objArray.length - 1) {
-                assertTrue("Next index returned incorrect value", i2.nextIndex() == n + 1);
-                assertTrue("previousIndex returned incorrect value : " + i2.previousIndex() + ", n val: " + n, i2.previousIndex() == n);
+                assertEquals("Next index returned incorrect value", i2.nextIndex(), n + 1);
+                assertEquals("previousIndex returned incorrect value : " + i2.previousIndex() + ", n val: " + n, i2.previousIndex(), n);
             }
             elm = i1.next();
-            assertTrue("Iterator returned elements in wrong order", elm == objArray[n]);
+            assertSame("Iterator returned elements in wrong order", elm, objArray[n]);
             ++n;
         }
         i2 = ll.listIterator(ll.size()/2);
-        assertTrue((Integer)i2.next() == ll.size()/2);
+        assertEquals((int) (Integer) i2.next(), ll.size() / 2);
         List myList = new LinkedList();
         myList.add(null);
         myList.add("Blah");
@@ -234,7 +229,7 @@ public class LinkedListTest extends TestCase {
         myList.add("Booga");
         myList.add(null);
         ListIterator li = myList.listIterator();
-        assertTrue("li.hasPrevious() should be false", !li.hasPrevious());
+        assertFalse("li.hasPrevious() should be false", li.hasPrevious());
         assertNull("li.next() should be null", li.next());
         assertTrue("li.hasPrevious() should be true", li.hasPrevious());
         assertNull("li.prev() should be null", li.previous());
@@ -244,7 +239,7 @@ public class LinkedListTest extends TestCase {
         assertEquals("li.next() should be Booga", "Booga", li.next());
         assertTrue("li.hasNext() should be true", li.hasNext());
         assertNull("li.next() should be null", li.next());
-        assertTrue("li.hasNext() should be false", !li.hasNext());
+        assertFalse("li.hasNext() should be false", li.hasNext());
         try {
             ll.listIterator(-1);
             fail("IndexOutOfBoundsException expected");
@@ -274,17 +269,17 @@ public class LinkedListTest extends TestCase {
         assertNotNull("Should have removed null", ll.get(20));
 
         assertTrue("Failed to remove valid Object", ll.remove(objArray[87]));
-        assertTrue("Removed invalid object", !ll.remove(new Object()));
+        assertFalse("Removed invalid object", ll.remove(new Object()));
         assertEquals("Found Object after removal", -1, ll.indexOf(objArray[87]));
         ll.add(null);
         ll.remove(null);
-        assertTrue("Should not contain null afrer removal", !ll.contains(null));
+        assertFalse("Should not contain null after removal", ll.contains(null));
     }
 
     @Test
     public void testRemoveFirst() {
         ll.removeFirst();
-        assertTrue("Failed to remove first element", ll.getFirst() != objArray[0]);
+        assertNotSame("Failed to remove first element", ll.getFirst(), objArray[0]);
         LinkedList list = new LinkedList();
         try {
             list.removeFirst();
@@ -297,7 +292,7 @@ public class LinkedListTest extends TestCase {
     @Test
     public void testRemoveLast() {
         ll.removeLast();
-        assertTrue("Failed to remove last element", ll.getLast() != objArray[objArray.length - 1]);
+        assertNotSame("Failed to remove last element", ll.getLast(), objArray[objArray.length - 1]);
         LinkedList list = new LinkedList();
         try {
             list.removeLast();
@@ -309,8 +304,8 @@ public class LinkedListTest extends TestCase {
 
     @Test
     public void test_size() {
-        assertTrue("Returned incorrect size", ll.size() == objArray.length);
+        assertEquals("Returned incorrect size", ll.size(), objArray.length);
         ll.removeFirst();
-        assertTrue("Returned incorrect size", ll.size() == objArray.length - 1);
+        assertEquals("Returned incorrect size", ll.size(), objArray.length - 1);
     }
 }

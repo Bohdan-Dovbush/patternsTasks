@@ -11,8 +11,8 @@ import static generic.BFSAndDFS.wide;
 
 class BFSAndDFSTest {
     Tree root;
-    SimpleStack<Integer> stack = new SimpleStack<>();
-    SimpleQueue<Integer> queue = new SimpleQueue<>();
+    final SimpleStack<Integer> stack = new SimpleStack<>();
+    final SimpleQueue<Integer> queue = new SimpleQueue<>();
     @BeforeEach
     public void setUp() {
         root = new Tree(20,

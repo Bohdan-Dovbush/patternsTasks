@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+@SuppressWarnings("ALL")
 public class PriorityQueueTest extends TestCase {
 
     @Test
@@ -23,7 +26,7 @@ public class PriorityQueueTest extends TestCase {
         Object[] resultArray = iterResult.toArray();
         Arrays.sort(array);
         Arrays.sort(resultArray);
-        assertTrue(Arrays.equals(array, resultArray));
+        assertArrayEquals(array, resultArray);
 
         PriorityQueue<Integer> integerQueues = new PriorityQueue<>();
         Iterator<Integer> iters = integerQueues.iterator();

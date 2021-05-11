@@ -1,8 +1,8 @@
 package Collection;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +21,7 @@ public class ListTest extends TestCase {
     }
 
     @Test
-    public void test_add() {
-        // Adding items to arrayList
+    public void testAdd() {
         list.add("new Item");
         assertEquals(5, list.size());
     }
@@ -40,7 +39,6 @@ public class ListTest extends TestCase {
 
     @Test
     public void testIsEmpty() {
-        // Checking if array list is empty
         assertFalse(list.isEmpty());
     }
 

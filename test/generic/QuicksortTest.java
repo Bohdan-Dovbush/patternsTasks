@@ -14,7 +14,7 @@ class QuicksortTest {
     private final static int MAX = 20;
 
     @BeforeEach
-    public void setUp() throws Exception {
+    public void setUp() {
         numbers = new int[SIZE];
         Random generator = new Random();
         for (int i = 0; i < numbers.length; i++) {

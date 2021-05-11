@@ -19,9 +19,7 @@ public class ArrayListTest extends TestCase {
             objArray[i] = i;
         }
         alist = new ArrayList();
-        for (int i = 0; i < objArray.length; i++) {
-            alist.add(objArray[i]);
-        }
+        Collections.addAll(alist, objArray);
     }
 
     @Test
@@ -102,7 +100,7 @@ public class ArrayListTest extends TestCase {
             assertNotNull(e.getMessage());
         }
         try {
-            obj.addAll((int) -1, (Collection) null);
+            obj.addAll(-1, null);
             fail("IndexOutOfBoundsException expected");
         } catch (IndexOutOfBoundsException e) {
             // Expected
@@ -121,24 +119,21 @@ public class ArrayListTest extends TestCase {
         alist.clear();
         assertEquals("List with nulls did not clear", 0, alist.size());
 
-        for (int i = 0; i < alist.size(); i++) assertNull("Failed to clear list", alist.get(i));
+        for (Object o : alist) assertNull("Failed to clear list", o);
     }
 
     @Test
     public void testClone() {
         ArrayList x = (ArrayList) (((ArrayList) (alist)).clone());
-        assertTrue("Cloned list was inequal to original", x.equals(alist));
+        assertEquals("Cloned list was inequal to original", x, alist);
         for (int i = 0; i < alist.size(); i++)
-            assertTrue("Cloned list contains incorrect elements",
-                    alist.get(i) == x.get(i));
+            assertSame("Cloned list contains incorrect elements", alist.get(i), x.get(i));
         alist.add(null);
         alist.add(25, null);
         x = (ArrayList) (((ArrayList) (alist)).clone());
-        assertTrue("nulls test - Cloned list was inequal to original", x
-                .equals(alist));
+        assertEquals("nulls test - Cloned list was inequal to original", x, alist);
         for (int i = 0; i < alist.size(); i++)
-            assertTrue("nulls test - Cloned list contains incorrect elements",
-                    alist.get(i) == x.get(i));
+            assertSame("nulls test - Cloned list contains incorrect elements", alist.get(i), x.get(i));
     }
 
     @Test
@@ -147,10 +142,9 @@ public class ArrayListTest extends TestCase {
                 .contains(objArray[99]));
         assertTrue("Returned false for equal element", alist
                 .contains(8));
-        assertTrue("Returned true for invalid element", !alist
+        assertFalse("Returned true for invalid element", alist
                 .contains(new Object()));
-        assertTrue("Returned true for null but should have returned false",
-                !alist.contains(null));
+        assertFalse("Returned true for null but should have returned false", alist.contains(null));
         alist.add(null);
         assertTrue("Returned false for null but should have returned true",
                 alist.contains(null));

@@ -1,7 +1,7 @@
 package generic.util;
 
 public class Tree {
-    public int val;
+    public final int val;
     public Tree left = null;
     public Tree right = null;
 

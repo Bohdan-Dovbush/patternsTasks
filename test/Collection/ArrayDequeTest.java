@@ -166,7 +166,7 @@ public class ArrayDequeTest extends TestCase {
         assertEquals(testObjTwo, testQue.pollFirst());
         assertEquals(testObjThree, testQue.pollFirst());
         assertEquals(0, testQue.size());
-        assertEquals(null, testQue.peekFirst());
+        assertNull(testQue.peekFirst());
     }
 
     @Test
@@ -277,9 +277,7 @@ public class ArrayDequeTest extends TestCase {
         try {
             result.next();
             fail("should throw ConcurrentModificationException");
-        } catch (ConcurrentModificationException e) {
-            // expected
-        } catch (AssertionFailedError e) {
+        } catch (ConcurrentModificationException | AssertionFailedError e) {
             // expected
         }
         result = testQue.iterator();
@@ -375,7 +373,7 @@ public class ArrayDequeTest extends TestCase {
     public void testClone() {
         ArrayDeque<Object> cloned = testQue.clone();
         assertEquals(0, cloned.size());
-        assertFalse(cloned == testQue);
+        assertNotSame(cloned, testQue);
         assertTrue(testQue.add(testObjOne));
         assertTrue(testQue.add(testObjTwo));
         assertTrue(testQue.add(testObjOne));
