@@ -1,9 +1,10 @@
-package Collection;
+package Collection.set;
 
 import junit.framework.TestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -19,18 +20,16 @@ public class LinkedHashSetTest extends TestCase {
         for (int i = 0; i < objArray.length; i++)
             objArray[i] = i;
         hs = new LinkedHashSet();
-        for (int i = 0; i < objArray.length; i++)
-            hs.add(objArray[i]);
+        Collections.addAll(hs, objArray);
         hs.add(null);
     }
 
     public void testAdd() {
         int size = hs.size();
         hs.add(8);
-        assertTrue("Added element already contained by set", hs.size() == size);
+        assertEquals("Added element already contained by set", hs.size(), size);
         hs.add(-9);
-        assertTrue("Failed to increment set size after add",
-                hs.size() == size + 1);
+        assertEquals("Failed to increment set size after add", hs.size(), size + 1);
         assertTrue("Failed to add element to set", hs.contains(-9));
     }
 
@@ -40,20 +39,20 @@ public class LinkedHashSetTest extends TestCase {
         hs.clear();
         Iterator i = orgSet.iterator();
         assertEquals("Returned non-zero size after clear", 0, hs.size());
-        while (i.hasNext()) assertTrue("Failed to clear set", !hs.contains(i.next()));
+        while (i.hasNext()) assertFalse("Failed to clear set", hs.contains(i.next()));
     }
 
     @Test
     public void test_clone() {
         LinkedHashSet hs2 = (LinkedHashSet) hs.clone();
-        assertTrue("clone returned an equivalent LinkedHashSet", hs != hs2);
-        assertTrue("clone did not return an equal LinkedHashSet", hs.equals(hs2));
+        assertNotSame("clone returned an equivalent LinkedHashSet", hs, hs2);
+        assertEquals("clone did not return an equal LinkedHashSet", hs, hs2);
     }
 
     @Test
     public void test_containsLjava_lang_Object() {
         assertTrue("Returned false for valid object", hs.contains(objArray[90]));
-        assertTrue("Returned true for invalid Object", !hs.contains(new Object()));
+        assertFalse("Returned true for invalid Object", hs.contains(new Object()));
         LinkedHashSet s = new LinkedHashSet();
         s.add(null);
         assertTrue("Cannot handle null", s.contains(null));
@@ -62,7 +61,7 @@ public class LinkedHashSetTest extends TestCase {
     @Test
     public void test_isEmpty() {
         assertTrue("Empty set returned false", new LinkedHashSet().isEmpty());
-        assertTrue("Non-empty set returned true", !hs.isEmpty());
+        assertFalse("Non-empty set returned true", hs.isEmpty());
     }
 
     @Test
@@ -74,13 +73,13 @@ public class LinkedHashSetTest extends TestCase {
             Object oo = i.next();
             if (oo != null) {
                 Integer ii = (Integer) oo;
-                assertTrue("Incorrect element found", ii.intValue() == j);
+                assertEquals("Incorrect element found", ii.intValue(), j);
             } else {
                 assertTrue("Cannot find null", hs.contains(oo));
             }
             ++x;
         }
-        assertTrue("Returned iteration of incorrect size", hs.size() == x);
+        assertEquals("Returned iteration of incorrect size", hs.size(), x);
         LinkedHashSet s = new LinkedHashSet();
         s.add(null);
         assertNull("Cannot handle null", s.iterator().next());
@@ -90,8 +89,8 @@ public class LinkedHashSetTest extends TestCase {
     public void testRemove() {
         int size = hs.size();
         hs.remove(98);
-        assertTrue("Failed to remove element", !hs.contains(98));
-        assertTrue("Failed to decrement set size", hs.size() == size - 1);
+        assertFalse("Failed to remove element", hs.contains(98));
+        assertEquals("Failed to decrement set size", hs.size(), size - 1);
         LinkedHashSet s = new LinkedHashSet();
         s.add(null);
         assertTrue("Cannot handle null", s.remove(null));
@@ -99,8 +98,8 @@ public class LinkedHashSetTest extends TestCase {
 
     @Test
     public void testSize() {
-        assertTrue("Returned incorrect size", hs.size() == (objArray.length + 1));
+        assertEquals("Returned incorrect size", hs.size(), (objArray.length + 1));
         hs.clear();
-        assertEquals("Cleared set returned non-zero size", 0, hs.size());
+        assertEquals("Cleared set returned non-zero size", 0, true);
     }
 }

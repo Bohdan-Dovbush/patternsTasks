@@ -1,4 +1,4 @@
-package Collection;
+package Collection.set;
 
 import Collection.Util.EmptyEnum;
 import Collection.Util.EnumFoo;
@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumSet;
 import java.util.Set;
+
+import static org.springframework.test.util.AssertionErrors.assertNotEquals;
 
 public class EnumSetTest extends TestCase {
 
@@ -45,24 +47,24 @@ public class EnumSetTest extends TestCase {
         for (Enum element : elements) {
             set.add((EnumFoo) element);
         }
-        assertFalse("Should return false", set.equals(null));
-        assertFalse("Should return false", set.equals(new Object()));
+        assertNotEquals("Should return false", null, set);
+        assertNotEquals("Should return false", set, new Object());
         Set<EnumFoo> anotherSet = EnumSet.noneOf(EnumFoo.class);
         elements = EnumFoo.class.getEnumConstants();
         for (Enum element : elements) {
             anotherSet.add((EnumFoo) element);
         }
-        assertTrue("Should return true", set.equals(anotherSet));
+        assertEquals("Should return true", set, anotherSet);
         anotherSet.remove(EnumFoo.a);
-        assertFalse("Should return false", set.equals(anotherSet));
+        assertNotEquals("Should return false", set, anotherSet);
         // test enum type with more than 64 elements
         Set<HugeEnum> hugeSet;
         hugeSet = EnumSet.allOf(HugeEnum.class);
-        assertFalse(hugeSet.equals(null));
-        assertFalse(hugeSet.equals(new Object()));
+        assertNull(hugeSet);
+        assertEquals(hugeSet, new Object());
         Set<HugeEnum> anotherHugeSet = EnumSet.allOf(HugeEnum.class);
         anotherHugeSet.remove(HugeEnum.a);
-        assertFalse(hugeSet.equals(anotherHugeSet));
+        assertEquals(hugeSet, anotherHugeSet);
     }
 
     @Test

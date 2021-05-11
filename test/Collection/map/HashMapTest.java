@@ -1,4 +1,4 @@
-package Collection;
+package Collection.map;
 
 import junit.framework.TestCase;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,23 +27,6 @@ public class HashMapTest extends TestCase {
             hm.put("test", null);
             hm.put(null, "test");
             hm.put(null, null);
-            hm.put("test", "test");
-    }
-
-    @Test
-    public void testConstructor() {
-        HashMap hm2 = new HashMap(5, (float) 0.5);
-        assertEquals("Created incorrect HashMap", 0, hm2.size());
-        try {
-            new HashMap(0, 0);
-            fail("IllegalArgumentException expected");
-        } catch (IllegalArgumentException e) {
-            //expected
-        }
-        HashMap empty = new HashMap(0, 0.75f);
-        assertNull("Empty hashtable access", empty.get("nothing"));
-        empty.put("something", "here");
-        assertTrue("cannot get element", empty.get("something") == "here");
     }
 
     @Test
@@ -68,10 +51,10 @@ public class HashMapTest extends TestCase {
     @Test
     public void testClone() {
         HashMap hm2 = (HashMap) hm.clone();
-        assertTrue("Clone answered equivalent HashMap", hm2 != hm);
+        assertNotSame("Clone answered equivalent HashMap", hm2, hm);
         for (int counter = 0; counter < hmSize; counter++)
-            assertTrue("Clone answered unequal HashMap", hm
-                    .get(objArray2[counter]) == hm2.get(objArray2[counter]));
+            assertSame("Clone answered unequal HashMap", hm
+                    .get(objArray2[counter]), hm2.get(objArray2[counter]));
         HashMap map = new HashMap();
         map.put("key", "value");
         // get the keySet() and values() on the original Map
@@ -84,40 +67,40 @@ public class HashMapTest extends TestCase {
         AbstractMap map2 = (AbstractMap) map.clone();
         map2.put("key", "value2");
         Collection values2 = map2.values();
-        assertTrue("values() is identical", values2 != values);
+        assertNotSame("values() is identical", values2, values);
         // values() and keySet() on the cloned() map should be different
         assertEquals("values() was not cloned",
                 "value2", values2.iterator().next());
         map2.clear();
         map2.put("key2", "value3");
         Set key2 = map2.keySet();
-        assertTrue("keySet() is identical", key2 != keys);
+        assertNotSame("keySet() is identical", key2, keys);
         assertEquals("keySet() was not cloned",
                 "key2", key2.iterator().next());
     }
 
     @Test
     public void testContainsKey() {
-        Integer key = 876;
-        assertTrue("Returned false for valid key", hm.containsKey(key.toString()));
-        assertTrue("Returned true for invalid key", !hm.containsKey("KKDKDKD"));
+        int key = 876;
+        assertTrue("Returned false for valid key", hm.containsKey(Integer.toString(key)));
+        assertFalse("Returned true for invalid key", hm.containsKey("KKDKDKD"));
         HashMap m = new HashMap();
         m.put(null, "test");
         assertTrue("Failed with null key", m.containsKey(null));
-        assertTrue("Failed with missing key matching null hash", !m.containsKey(0));
+        assertFalse("Failed with missing key matching null hash", m.containsKey(0));
     }
 
     @Test
     public void testContainsValue() {
         assertTrue("Returned false for valid value", hm.containsValue(875));
-        assertTrue("Returned true for invalid value", !hm.containsValue(-9));
+        assertFalse("Returned true for invalid value", hm.containsValue(-9));
     }
 
     @Test
     public void testEntrySet() {
         Set s = hm.entrySet();
         Iterator i = s.iterator();
-        assertTrue("Returned set of incorrect size", hm.size() == s.size());
+        assertEquals("Returned set of incorrect size", hm.size(), s.size());
         while (i.hasNext()) {
             Map.Entry m = (Map.Entry) i.next();
             assertTrue("Returned incorrect entry set", hm.containsKey(m
@@ -135,7 +118,7 @@ public class HashMapTest extends TestCase {
     @Test
     public void testIsEmpty() {
         assertTrue("Returned false for new map", new HashMap().isEmpty());
-        assertTrue("Returned true for non-empty", !hm.isEmpty());
+        assertFalse("Returned true for non-empty", hm.isEmpty());
     }
 
     @Test
@@ -161,7 +144,7 @@ public class HashMapTest extends TestCase {
         assertEquals("myValue", map.get(myKey));
         boolean found = false;
         for (Integer keyss : map.keySet()) {
-            if (found = keyss == myKey) {
+            if (found = keyss.equals(myKey)) {
                 break;
             }
         }
@@ -172,7 +155,7 @@ public class HashMapTest extends TestCase {
         assertTrue(map.containsKey(myKey));
         assertEquals("myValue", map.get(myKey));
         for (Integer keys : map.keySet()) {
-            if (found = keys == myKey) {
+            if (found = keys.equals(myKey)) {
                 break;
             }
         }
@@ -186,10 +169,9 @@ public class HashMapTest extends TestCase {
 
     @Test
     public void testPutAll() {
-        HashMap hm2 = new HashMap();
-        hm2.putAll(hm);
+        HashMap hm2 = new HashMap(hm);
         for (int i = 0; i < 1000; i++)
-            assertTrue("Failed to clear all elements", hm2.get(Integer.toString(i)).equals((i)));
+            assertEquals("Failed to clear all elements", hm2.get(Integer.toString(i)), (i));
         Random rnd = new Random(666);
         Map<Integer,Integer> m1 = new HashMap<>();
         int MID = 10000;
@@ -214,16 +196,15 @@ public class HashMapTest extends TestCase {
     @Test
     public void testValues() {
         Collection c = hm.values();
-        assertTrue("Returned collection of incorrect size()", c.size() == hm.size());
-        for (int i = 0; i < objArray.length; i++)
-            assertTrue("Returned collection does not contain all keys", c.contains(objArray[i]));
+        assertEquals("Returned collection of incorrect size()", c.size(), hm.size());
+        for (Object o : objArray) assertTrue("Returned collection does not contain all keys", c.contains(o));
         HashMap myHashMap = new HashMap();
         for (int i = 0; i < 100; i++)
             myHashMap.put(objArray2[i], objArray[i]);
         Collection values = myHashMap.values();
         values.remove(0);
-        assertTrue("Removing from the values collection should remove from the original map",
-                !myHashMap.containsValue(0));
+        assertFalse("Removing from the values collection should remove from the original map",
+                myHashMap.containsValue(0));
     }
 
     @Test
@@ -231,9 +212,9 @@ public class HashMapTest extends TestCase {
         int size = hm.size();
         Integer y = 9;
         Integer x = ((Integer) hm.remove(y.toString()));
-        assertTrue("Remove returned incorrect value", x.equals(y));
+        assertEquals("Remove returned incorrect value", x, y);
         assertNull("Failed to remove given key", hm.get(y));
-        assertTrue("Failed to decrement size", hm.size() == (size - 1));
+        assertEquals("Failed to decrement size", hm.size(), (size - 1));
         assertNull("Remove of non-existent key returned non-null", hm.remove("LCLCLC"));
         HashMap m = new HashMap();
         m.put(null, "test");
@@ -255,7 +236,7 @@ public class HashMapTest extends TestCase {
 
     @Test
     public void testSize() {
-        assertTrue("Returned incorrect size", hm.size() == (objArray.length + 2));
+        assertEquals("Returned incorrect size", hm.size(), (objArray.length + 2));
     }
 
 }

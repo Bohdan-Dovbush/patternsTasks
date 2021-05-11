@@ -1,6 +1,7 @@
-package Collection;
+package Collection.set;
 
 import Collection.Helper.Product;
+import Collection.QueueExample;
 import junit.framework.TestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

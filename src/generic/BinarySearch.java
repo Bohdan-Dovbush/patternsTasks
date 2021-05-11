@@ -34,7 +34,7 @@ public class BinarySearch<T> {
             this.index = index;
         }
     }
-
+ // 1, 2, 3, 4 5 6 7
     public static <T> Result search(T[] objects, int first, int last, T x, Comparator<? super T> comparator) {
 
         if(objects.length < last) {

@@ -3,131 +3,126 @@
   <ID>JAVA</ID>
   <OriginalElement>java.util</OriginalElement>
   <nodes>
-    <node x="1792.25" y="4553.0">java.util.LinkedHashMap</node>
-    <node x="267.5248120300753" y="3871.0">java.util.TreeMap</node>
-    <node x="0.0" y="2830.5">java.util.NavigableMap</node>
-    <node x="857.0" y="2675.5">java.util.EnumMap</node>
-    <node x="2157.0" y="2334.0">java.util.Properties</node>
-    <node x="48.5" y="1502.5">java.util.SortedMap</node>
-    <node x="1284.0" y="0.0">java.util.Map</node>
-    <node x="836.106015037594" y="1380.0">java.util.AbstractMap</node>
-    <node x="2440.5" y="340.5">java.util.Dictionary</node>
-    <node x="1198.0" y="2598.0">java.util.IdentityHashMap</node>
-    <node x="1654.0" y="2356.0">java.util.HashMap</node>
-    <node x="400.0" y="2598.0">java.util.WeakHashMap</node>
-    <node x="2190.5" y="951.0">java.util.Hashtable</node>
+    <node x="528.5" y="0.0">java.util.Map</node>
+    <node x="317.0" y="170.0">java.util.EnumMap</node>
+    <node x="779.75" y="0.0">java.util.Dictionary</node>
+    <node x="633.5" y="250.0">java.util.LinkedHashMap</node>
+    <node x="750.0" y="170.0">java.util.Properties</node>
+    <node x="146.28721804511287" y="250.0">java.util.TreeMap</node>
+    <node x="440.0" y="170.0">java.util.IdentityHashMap</node>
+    <node x="0.0" y="170.0">java.util.NavigableMap</node>
+    <node x="11.5" y="90.0">java.util.SortedMap</node>
+    <node x="626.0" y="170.0">java.util.HashMap</node>
+    <node x="162.0" y="170.0">java.util.WeakHashMap</node>
+    <node x="753.5" y="90.0">java.util.Hashtable</node>
+    <node x="297.00112781954897" y="90.0">java.util.AbstractMap</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="java.util.HashMap" target="java.util.Map">
-      <point x="120.49999999999994" y="-721.5" />
-      <point x="2015.5" y="931.0" />
-      <point x="1593.8571428571427" y="931.0" />
-      <point x="68.85714285714266" y="445.5" />
-    </edge>
-    <edge source="java.util.SortedMap" target="java.util.Map">
-      <point x="0.0" y="-115.0" />
-      <point x="190.0" y="911.0" />
-      <point x="1318.4285714285716" y="911.0" />
-      <point x="-206.57142857142856" y="445.5" />
-    </edge>
-    <edge source="java.util.TreeMap" target="java.util.AbstractMap">
-      <point x="135.25" y="-1029.0" />
-      <point x="673.2748120300753" y="3846.0" />
-      <point x="846.5" y="3846.0" />
-      <point x="846.5" y="2314.0" />
-      <point x="932.406015037594" y="2314.0" />
-      <point x="-64.20000000000005" y="237.5" />
+    <edge source="java.util.Hashtable" target="java.util.Dictionary">
+      <point x="29.75" y="-15.0" />
+      <point x="0.0" y="15.0" />
     </edge>
     <edge source="java.util.WeakHashMap" target="java.util.AbstractMap">
-      <point x="109.0" y="-479.5" />
-      <point x="727.0" y="2304.0" />
-      <point x="868.2060150375939" y="2304.0" />
-      <point x="-128.4000000000001" y="237.5" />
+      <point x="33.5" y="-15.0" />
+      <point x="262.5" y="140.0" />
+      <point x="310.40112781954895" y="140.0" />
+      <point x="-53.60000000000002" y="15.0" />
     </edge>
-    <edge source="java.util.LinkedHashMap" target="java.util.HashMap">
-      <point x="-114.25" y="-347.0" />
-      <point x="1906.5" y="3846.0" />
-      <point x="1895.0" y="3846.0" />
-      <point x="0.0" y="721.5" />
+    <edge source="java.util.HashMap" target="java.util.Map">
+      <point x="25.75" y="-15.0" />
+      <point x="703.25" y="70.0" />
+      <point x="574.7857142857143" y="70.0" />
+      <point x="10.285714285714334" y="15.0" />
     </edge>
     <edge source="java.util.HashMap" target="java.util.AbstractMap">
-      <point x="-120.5" y="-721.5" />
-      <point x="1774.5" y="2304.0" />
-      <point x="1125.0060150375941" y="2304.0" />
-      <point x="128.4000000000001" y="237.5" />
-    </edge>
-    <edge source="java.util.AbstractMap" target="java.util.Map">
-      <point x="0.0" y="-237.5" />
-      <point x="996.606015037594" y="931.0" />
-      <point x="1456.142857142857" y="931.0" />
-      <point x="-68.85714285714289" y="445.5" />
-    </edge>
-    <edge source="java.util.Properties" target="java.util.Hashtable">
-      <point x="0.0" y="-743.5" />
-      <point x="0.0" y="666.5" />
-    </edge>
-    <edge source="java.util.NavigableMap" target="java.util.SortedMap">
-      <point x="0.0" y="-247.0" />
-      <point x="0.0" y="115.0" />
-    </edge>
-    <edge source="java.util.IdentityHashMap" target="java.util.Map">
-      <point x="109.0" y="-479.5" />
-      <point x="0.0" y="445.5" />
-    </edge>
-    <edge source="java.util.LinkedHashMap" target="java.util.Map">
-      <point x="114.25" y="-347.0" />
-      <point x="2135.0" y="3846.0" />
-      <point x="2146.5" y="3846.0" />
-      <point x="2146.5" y="921.0" />
-      <point x="1662.7142857142856" y="921.0" />
-      <point x="137.71428571428555" y="445.5" />
-    </edge>
-    <edge source="java.util.EnumMap" target="java.util.AbstractMap">
-      <point x="0.0" y="-402.0" />
-      <point x="1017.5" y="2314.0" />
-      <point x="996.606015037594" y="2314.0" />
-      <point x="0.0" y="237.5" />
-    </edge>
-    <edge source="java.util.WeakHashMap" target="java.util.Map">
-      <point x="-109.0" y="-479.5" />
-      <point x="509.0" y="921.0" />
-      <point x="1387.2857142857142" y="921.0" />
-      <point x="-137.71428571428578" y="445.5" />
+      <point x="-25.75" y="-15.0" />
+      <point x="651.75" y="140.0" />
+      <point x="417.6011278195489" y="140.0" />
+      <point x="53.599999999999966" y="15.0" />
     </edge>
     <edge source="java.util.Hashtable" target="java.util.Map">
-      <point x="-120.5" y="-666.5" />
-      <point x="2311.0" y="911.0" />
-      <point x="1731.5714285714284" y="911.0" />
-      <point x="206.57142857142844" y="445.5" />
+      <point x="-29.75" y="-15.0" />
+      <point x="783.25" y="50.0" />
+      <point x="595.3571428571429" y="50.0" />
+      <point x="30.85714285714289" y="15.0" />
     </edge>
-    <edge source="java.util.TreeMap" target="java.util.NavigableMap">
-      <point x="-135.25" y="-1029.0" />
-      <point x="402.7748120300753" y="3846.0" />
-      <point x="190.0" y="3846.0" />
-      <point x="0.0" y="247.0" />
+    <edge source="java.util.Properties" target="java.util.Hashtable">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
     </edge>
-    <edge source="java.util.Hashtable" target="java.util.Dictionary">
-      <point x="120.5" y="-666.5" />
-      <point x="0.0" y="105.0" />
+    <edge source="java.util.IdentityHashMap" target="java.util.Map">
+      <point x="41.5" y="-15.0" />
+      <point x="0.0" y="15.0" />
     </edge>
     <edge source="java.util.IdentityHashMap" target="java.util.AbstractMap">
-      <point x="-109.0" y="-479.5" />
-      <point x="1307.0" y="2314.0" />
-      <point x="1060.806015037594" y="2314.0" />
-      <point x="64.20000000000005" y="237.5" />
+      <point x="-41.5" y="-15.0" />
+      <point x="481.5" y="150.0" />
+      <point x="390.8011278195489" y="150.0" />
+      <point x="26.80000000000001" y="15.0" />
+    </edge>
+    <edge source="java.util.SortedMap" target="java.util.Map">
+      <point x="0.0" y="-15.0" />
+      <point x="71.0" y="50.0" />
+      <point x="533.6428571428571" y="50.0" />
+      <point x="-30.85714285714289" y="15.0" />
+    </edge>
+    <edge source="java.util.WeakHashMap" target="java.util.Map">
+      <point x="-33.5" y="-15.0" />
+      <point x="195.5" y="60.0" />
+      <point x="543.9285714285714" y="60.0" />
+      <point x="-20.571428571428555" y="15.0" />
+    </edge>
+    <edge source="java.util.LinkedHashMap" target="java.util.Map">
+      <point x="37.5" y="-15.0" />
+      <point x="746.0" y="225.0" />
+      <point x="739.5" y="225.0" />
+      <point x="739.5" y="60.0" />
+      <point x="585.0714285714286" y="60.0" />
+      <point x="20.571428571428555" y="15.0" />
+    </edge>
+    <edge source="java.util.TreeMap" target="java.util.AbstractMap">
+      <point x="25.75" y="-15.0" />
+      <point x="223.53721804511287" y="225.0" />
+      <point x="306.5" y="225.0" />
+      <point x="306.5" y="150.0" />
+      <point x="337.2011278195489" y="150.0" />
+      <point x="-26.80000000000001" y="15.0" />
+    </edge>
+    <edge source="java.util.NavigableMap" target="java.util.SortedMap">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.AbstractMap" target="java.util.Map">
+      <point x="0.0" y="-15.0" />
+      <point x="364.00112781954897" y="70.0" />
+      <point x="554.2142857142857" y="70.0" />
+      <point x="-10.285714285714334" y="15.0" />
+    </edge>
+    <edge source="java.util.EnumMap" target="java.util.AbstractMap">
+      <point x="0.0" y="-15.0" />
+      <point x="368.5" y="150.0" />
+      <point x="364.00112781954897" y="150.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.LinkedHashMap" target="java.util.HashMap">
+      <point x="-37.5" y="-15.0" />
+      <point x="671.0" y="225.0" />
+      <point x="677.5" y="225.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="java.util.TreeMap" target="java.util.NavigableMap">
+      <point x="-25.75" y="-15.0" />
+      <point x="172.03721804511287" y="225.0" />
+      <point x="71.0" y="225.0" />
+      <point x="0.0" y="15.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.547914813912258" x="1255.7457587411325" y="2167.1392766688978" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="453.0" y="140.0" />
   <SelectedNodes>
     <node>java.util.AbstractMap</node>
   </SelectedNodes>
-  <Categories>
-    <Category>Fields</Category>
-    <Category>Constructors</Category>
-    <Category>Methods</Category>
-    <Category>Properties</Category>
-  </Categories>
+  <Categories />
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>

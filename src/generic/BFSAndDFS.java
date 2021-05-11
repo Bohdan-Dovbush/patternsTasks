@@ -24,17 +24,17 @@ public class BFSAndDFS {
     }
 
     public static String wide(Tree root) {
-        SimpleQueue<Tree> stack = new SimpleQueue<>();
-        stack.add(root);
+        SimpleQueue<Tree> queue = new SimpleQueue<>();
+        queue.add(root);
 
-        while (!stack.isEmpty()) {
-            Tree node = stack.remove();
+        while (!queue.isEmpty()) {
+            Tree node = queue.remove();
             System.out.println(node.val);
             if (node.left != null) {
-                stack.add(node.left);
+                queue.add(node.left);
             }
             if (node.right != null) {
-                stack.add(node.right);
+                queue.add(node.right);
             }
         }
         return "Wide";

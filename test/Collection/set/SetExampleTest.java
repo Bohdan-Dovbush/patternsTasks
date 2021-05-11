@@ -1,5 +1,6 @@
-package Collection;
+package Collection.set;
 
+import Collection.SetExample;
 import junit.framework.TestCase;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package Collection;
+package Collection.map;
 
 import Collection.Util.ReversedComparator;
 import junit.framework.TestCase;
@@ -7,10 +7,12 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
+import static org.springframework.test.util.AssertionErrors.assertNotEquals;
+
 public class TreeMapTest extends TestCase {
 
     TreeMap tm;
-    Object objArray[] = new Object[1000];
+    Object[] objArray = new Object[1000];
 
     @BeforeEach
     protected void setUp() {
@@ -27,13 +29,13 @@ public class TreeMapTest extends TestCase {
         Integer j = 2;
         Comparator comp = new ReversedComparator();
         TreeMap reversedTreeMap = new TreeMap(comp);
-        assertTrue("TreeMap answered incorrect comparator", reversedTreeMap.comparator() == comp);
+        assertSame("TreeMap answered incorrect comparator", reversedTreeMap.comparator(), comp);
         reversedTreeMap.put(i.toString(), i);
         reversedTreeMap.put(j.toString(), j);
-        assertTrue("TreeMap does not use comparator (firstKey was incorrect)",
-                reversedTreeMap.firstKey().equals(j.toString()));
-        assertTrue("TreeMap does not use comparator (lastKey was incorrect)",
-                reversedTreeMap.lastKey().equals(i.toString()));
+        assertEquals("TreeMap does not use comparator (firstKey was incorrect)",
+                reversedTreeMap.firstKey(), j.toString());
+        assertEquals("TreeMap does not use comparator (lastKey was incorrect)",
+                reversedTreeMap.lastKey(), i.toString());
     }
 
     @Test
@@ -45,11 +47,11 @@ public class TreeMapTest extends TestCase {
     @Test
     public void testClone() {
         TreeMap clonedMap = (TreeMap) tm.clone();
-        assertTrue("Cloned map does not equal the original map", clonedMap.equals(tm));
-        assertTrue("Cloned map is the same reference as the original map", clonedMap != tm);
+        assertEquals("Cloned map does not equal the original map", clonedMap, tm);
+        assertNotSame("Cloned map is the same reference as the original map", clonedMap, tm);
         for (Object element : objArray) {
-            assertTrue("Cloned map contains incorrect elements", clonedMap
-                    .get(element.toString()) == tm.get(element.toString()));
+            assertSame("Cloned map contains incorrect elements", clonedMap
+                    .get(element.toString()), tm.get(element.toString()));
         }
         TreeMap map = new TreeMap();
         map.put("key", "value");
@@ -61,38 +63,38 @@ public class TreeMapTest extends TestCase {
         AbstractMap map2 = (AbstractMap) map.clone();
         map2.put("key", "value2");
         Collection values2 = map2.values();
-        assertTrue("values() is identical", values2 != values);
+        assertNotSame("values() is identical", values2, values);
         // values() and keySet() on the cloned() map should be different
         assertEquals("values() was not cloned", "value2", values2.iterator().next());
         map2.clear();
         map2.put("key2", "value3");
         Set key2 = map2.keySet();
-        assertTrue("keySet() is identical", key2 != keys);
+        assertNotSame("keySet() is identical", key2, keys);
         assertEquals("keySet() was not cloned", "key2", key2.iterator().next());
     }
 
     @Test
     public void testContainsKey() {
         assertTrue("Returned false for valid key", tm.containsKey("95"));
-        assertTrue("Returned true for invalid key", !tm.containsKey("XXXXX"));
+        assertFalse("Returned true for invalid key", tm.containsKey("XXXXX"));
     }
 
     @Test
     public void testContainsValue() {
         assertTrue("Returned false for valid value", tm.containsValue(objArray[986]));
-        assertTrue("Returned true for invalid value", !tm.containsValue(new Object()));
+        assertFalse("Returned true for invalid value", tm.containsValue(new Object()));
     }
 
     @Test
     public void testEntrySet() {
         Set anEntrySet = tm.entrySet();
         Iterator entrySetIterator = anEntrySet.iterator();
-        assertTrue("EntrySet is incorrect size", anEntrySet.size() == objArray.length);
+        assertEquals("EntrySet is incorrect size", anEntrySet.size(), objArray.length);
         Map.Entry entry;
         while (entrySetIterator.hasNext()) {
             entry = (Map.Entry) entrySetIterator.next();
-            assertTrue("EntrySet does not contain correct mappings", tm
-                    .get(entry.getKey()) == entry.getValue());
+            assertSame("EntrySet does not contain correct mappings", tm
+                    .get(entry.getKey()), entry.getValue());
         }
     }
 
@@ -103,8 +105,7 @@ public class TreeMapTest extends TestCase {
 
     @Test
     public void testLastKey() {
-        assertTrue("Returned incorrect last key", tm.lastKey().equals(
-                objArray[objArray.length - 1].toString()));
+        assertEquals("Returned incorrect last key", tm.lastKey(), objArray[objArray.length - 1].toString());
         assertNotSame(objArray[objArray.length - 1].toString(), tm.lastKey());
         assertEquals(objArray[objArray.length - 2].toString(), tm.headMap("999").lastKey());
         assertEquals(objArray[objArray.length - 1].toString(), tm.tailMap("123").lastKey());
@@ -115,16 +116,16 @@ public class TreeMapTest extends TestCase {
     public void testPutAll() {
         TreeMap x = new TreeMap();
         x.putAll(tm);
-        assertTrue("Map incorrect size after put", x.size() == tm.size());
+        assertEquals("Map incorrect size after put", x.size(), tm.size());
         for (Object element : objArray) {
-            assertTrue("Failed to put all elements", x.get(element.toString()).equals(element));
+            assertEquals("Failed to put all elements", x.get(element.toString()), element);
         }
     }
 
     @Test
     public void testRemove() {
         tm.remove("990");
-        assertTrue("Failed to remove mapping", !tm.containsKey("990"));
+        assertFalse("Failed to remove mapping", tm.containsKey("990"));
     }
 
     @Test
@@ -166,15 +167,15 @@ public class TreeMapTest extends TestCase {
         m1.put("key2", "val2");
         m2.put(1, "val1");
         m2.put(2, "val2");
-        assertFalse("Maps should not be equal 1", m1.equals(m2));
-        assertFalse("Maps should not be equal 2", m2.equals(m1));
+        assertNotEquals("Maps should not be equal 1", m1, m2);
+        assertNotEquals("Maps should not be equal 2", m2, m1);
         // comparing TreeMap with HashMap
         m1 = new TreeMap();
         m2 = new HashMap();
         m1.put("key", "val");
         m2.put(new Object(), "val");
-        assertFalse("Maps should not be equal 3", m1.equals(m2));
-        assertFalse("Maps should not be equal 4", m2.equals(m1));
+        assertNotEquals("Maps should not be equal 3", m1, m2);
+        assertNotEquals("Maps should not be equal 4", m2, m1);
     }
 
     @Test
@@ -213,28 +214,25 @@ public class TreeMapTest extends TestCase {
     public void testValues() {
         Collection vals = tm.values();
         vals.iterator();
-        assertTrue("Returned collection of incorrect size",
-                vals.size() == objArray.length);
+        assertEquals("Returned collection of incorrect size", vals.size(), objArray.length);
         for (Object element : objArray) {
             assertTrue("Collection contains incorrect elements", vals.contains(element));
         }
         assertEquals(1000, vals.size());
         int j = 0;
-        for (Iterator iter = vals.iterator(); iter.hasNext(); ) {
-            Object element = (Object) iter.next();
+        for (Object ignored : vals) {
             j++;
         }
         assertEquals(1000, j);
         vals = tm.descendingMap().values();
         vals.iterator();
-        assertTrue("Returned collection of incorrect size", vals.size() == objArray.length);
+        assertEquals("Returned collection of incorrect size", vals.size(), objArray.length);
         for (Object element : objArray) {
             assertTrue("Collection contains incorrect elements", vals.contains(element));
         }
         assertEquals(1000, vals.size());
         j = 0;
-        for (Iterator iter = vals.iterator(); iter.hasNext(); ) {
-            Object element = (Object) iter.next();
+        for (Object ignored : vals) {
             j++;
         }
         assertEquals(1000, j);
