@@ -5,6 +5,14 @@
       <entry_point TYPE="field" FQNAME="Collection.QueueExampleTests qe" />
       <entry_point TYPE="field" FQNAME="Collection.QueueExample productsQueue" />
       <entry_point TYPE="field" FQNAME="Collection.QueueExampleTests productsQueue" />
+      <entry_point TYPE="field" FQNAME="Collection.HashMapExample availableBooksInDifferentStores" />
+      <entry_point TYPE="field" FQNAME="Collection.HashMapExample books" />
+      <entry_point TYPE="field" FQNAME="Collection.HashMapExample bookStores" />
+      <entry_point TYPE="field" FQNAME="StructuralsPatterns.Adapter.AdvancedPayGate.AdvancedPayGateAdapter paymentGate" />
+      <entry_point TYPE="field" FQNAME="Collection.CollectionProductMain products" />
+      <entry_point TYPE="field" FQNAME="Collection.set.QueueExampleTests productsQueue" />
+      <entry_point TYPE="field" FQNAME="Collection.set.QueueExampleTests qe" />
+      <entry_point TYPE="field" FQNAME="Collection.HashMapExample stores" />
     </entry_points>
     <pattern value="GeneratingsPatterns.AbstractFactory.AbstractFactoryPatternsMain" />
     <pattern value="StructuralsPatterns.Adapter.AdapterPatternsMain" />
@@ -155,6 +163,256 @@
     <pattern value="BihavioralsPatterns.Observer.JavaDeveloperJobSite" method="removeObserver" />
     <pattern value="BihavioralsPatterns.Visitor.SonFamily" />
     <pattern value="StructuralsPatterns.Bridge.Role.UserRole" />
+    <pattern value="generic.util.Stack" method="isEmpty" />
+    <pattern value="generic.util.Stack" method="pop" />
+    <pattern value="generic.util.Stack" method="push" />
+    <pattern value="generic.util.Stack" />
+    <pattern value="generic.util.Queue" method="add" />
+    <pattern value="generic.util.Queue" method="isEmpty" />
+    <pattern value="generic.util.Queue" />
+    <pattern value="generic.util.Queue" method="remove" />
+    <pattern value="Collection.HashMapExample" method="addAvailableBooksInDifferentStoresToTheHashMap" />
+    <pattern value="Collection.HashMapExample" method="addBooksToTheStores" />
+    <pattern value="StructuralsPatterns.Bridge.Role.AdminRole" />
+    <pattern value="StructuralsPatterns.Adapter.AdvancedPayGate.AdvancedPayGateAdapter" method="AdvancedPayGateAdapter" />
+    <pattern value="Collection.ArrayDequeTest" />
+    <pattern value="Collection.ArrayListTest" />
+    <pattern value="generic.BFSAndDFS" />
+    <pattern value="generic.BFSAndDFSTest" />
+    <pattern value="generic.BinarySearchTest" />
+    <pattern value="Collection.CollectionProductMain" />
+    <pattern value="generic.util.SimpleQueue" method="contains" />
+    <pattern value="generic.util.SimpleStack" method="contains" />
+    <pattern value="Collection.CollectionProductMain" method="createNewProduct" />
+    <pattern value="generic.BFSAndDFS" method="deep" />
+    <pattern value="StructuralsPatterns.Facade.Service.PaymentService" method="doPayment" />
+    <pattern value="Collection.map.EnumMapTest" />
+    <pattern value="Collection.set.EnumSetTest" />
+    <pattern value="Collection.Util.ReversedComparator" method="equals" />
+    <pattern value="Collection.HashMapExample" method="getBooks" />
+    <pattern value="Collection.HashMapExample" method="getStores" />
+    <pattern value="Collection.map.HashMapTest" />
+    <pattern value="Collection.set.HashSetTest" />
+    <pattern value="Collection.map.IdentityHashMapTest" />
+    <pattern value="Collection.map.LinkedHashMapTest" />
+    <pattern value="Collection.set.LinkedHashSetTest" />
+    <pattern value="Collection.LinkedListTest" />
+    <pattern value="Collection.ListTest" />
+    <pattern value="Collection.PriorityQueueTest" />
+    <pattern value="Collection.set.QueueExampleTests" />
+    <pattern value="generic.QuicksortTest" />
+    <pattern value="Collection.set.SetExampleTest" />
+    <pattern value="Collection.StackTest" />
+    <pattern value="Collection.map.TreeMapTest" />
+    <pattern value="Collection.set.TreeSetTest" />
+    <pattern value="Collection.map.WeakHashMapTest" />
+    <pattern value="Collection.CollectionProductMain" method="main" />
+    <pattern value="generic.util.TreeNode" method="main" />
+    <pattern value="StructuralsPatterns.Facade.Service.PaymentService" />
+    <pattern value="Collection.HashMapExample" method="printAllBooks" />
+    <pattern value="Collection.HashMapExample" method="printAllStores" />
+    <pattern value="Collection.HashMapExample" method="printAllTheBooksInAnStore" />
+    <pattern value="Collection.HashMapExample" method="printBookAtIndex" />
+    <pattern value="Collection.CollectionProductMain" method="printProducts" />
+    <pattern value="Collection.CollectionProductMain" method="removeProductsUsingIterator" />
+    <pattern value="Collection.Util.ReversedComparator" />
+    <pattern value="Collection.CollectionProductMain" method="runOtherAvailableCommonCollectionMethods" />
+    <pattern value="Collection.ArrayDequeTest" method="setUp" />
+    <pattern value="Collection.ArrayListTest" method="setUp" />
+    <pattern value="generic.BFSAndDFSTest" method="setUp" />
+    <pattern value="Collection.map.HashMapTest" method="setUp" />
+    <pattern value="Collection.set.HashSetTest" method="setUp" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="setUp" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="setUp" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="setUp" />
+    <pattern value="Collection.LinkedListTest" method="setUp" />
+    <pattern value="Collection.ListTest" method="setUp" />
+    <pattern value="Collection.set.QueueExampleTests" method="setUp" />
+    <pattern value="generic.QuicksortTest" method="setUp" />
+    <pattern value="Collection.StackTest" method="setUp" />
+    <pattern value="Collection.map.TreeMapTest" method="setUp" />
+    <pattern value="Collection.set.TreeSetTest" method="setUp" />
+    <pattern value="Collection.map.WeakHashMapTest" method="setUp" />
+    <pattern value="generic.util.SimpleQueue" />
+    <pattern value="generic.util.SimpleStack" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="test_clear" />
+    <pattern value="Collection.map.TreeMapTest" method="test_clear" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="test_clone" />
+    <pattern value="Collection.set.EnumSetTest" method="test_contains" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="test_containsLjava_lang_Object" />
+    <pattern value="Collection.ArrayListTest" method="test_isEmpty" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="test_isEmpty" />
+    <pattern value="Collection.LinkedListTest" method="test_size" />
+    <pattern value="Collection.ArrayDequeTest" method="testAdd" />
+    <pattern value="Collection.set.HashSetTest" method="testAdd" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="testAdd" />
+    <pattern value="Collection.LinkedListTest" method="testAdd" />
+    <pattern value="Collection.ListTest" method="testAdd" />
+    <pattern value="Collection.PriorityQueueTest" method="testAdd" />
+    <pattern value="Collection.ArrayListTest" method="testAddAll" />
+    <pattern value="Collection.LinkedListTest" method="testAddAll" />
+    <pattern value="Collection.set.TreeSetTest" method="testAddAll" />
+    <pattern value="generic.BinarySearchTest" method="testAddArraySize" />
+    <pattern value="Collection.ArrayDequeTest" method="testAddFirst" />
+    <pattern value="Collection.LinkedListTest" method="testAddFirst" />
+    <pattern value="Collection.ArrayListTest" method="testAddJavaObject" />
+    <pattern value="Collection.ArrayDequeTest" method="testAddLast" />
+    <pattern value="Collection.LinkedListTest" method="testAddLast" />
+    <pattern value="Collection.ArrayDequeTest" method="testClear" />
+    <pattern value="Collection.ArrayListTest" method="testClear" />
+    <pattern value="Collection.map.EnumMapTest" method="testClear" />
+    <pattern value="Collection.set.EnumSetTest" method="testClear" />
+    <pattern value="Collection.map.HashMapTest" method="testClear" />
+    <pattern value="Collection.set.HashSetTest" method="testClear" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testClear" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testClear" />
+    <pattern value="Collection.LinkedListTest" method="testClear" />
+    <pattern value="Collection.set.TreeSetTest" method="testClear" />
+    <pattern value="Collection.map.WeakHashMapTest" method="testClear" />
+    <pattern value="Collection.ArrayDequeTest" method="testClone" />
+    <pattern value="Collection.ArrayListTest" method="testClone" />
+    <pattern value="Collection.map.HashMapTest" method="testClone" />
+    <pattern value="Collection.set.HashSetTest" method="testClone" />
+    <pattern value="Collection.LinkedListTest" method="testClone" />
+    <pattern value="Collection.map.TreeMapTest" method="testClone" />
+    <pattern value="Collection.set.TreeSetTest" method="testClone" />
+    <pattern value="Collection.map.TreeMapTest" method="testComparator" />
+    <pattern value="Collection.set.TreeSetTest" method="testComparator" />
+    <pattern value="Collection.ArrayDequeTest" method="testContains" />
+    <pattern value="Collection.ArrayListTest" method="testContains" />
+    <pattern value="Collection.set.HashSetTest" method="testContains" />
+    <pattern value="Collection.LinkedListTest" method="testContains" />
+    <pattern value="Collection.ListTest" method="testContains" />
+    <pattern value="Collection.PriorityQueueTest" method="testContains" />
+    <pattern value="Collection.set.SetExampleTest" method="testContains" />
+    <pattern value="Collection.set.TreeSetTest" method="testContains" />
+    <pattern value="Collection.set.EnumSetTest" method="testContainsAll" />
+    <pattern value="Collection.map.EnumMapTest" method="testContainsKey" />
+    <pattern value="Collection.map.HashMapTest" method="testContainsKey" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testContainsKey" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testContainsKey" />
+    <pattern value="Collection.map.TreeMapTest" method="testContainsKey" />
+    <pattern value="Collection.map.EnumMapTest" method="testContainsValue" />
+    <pattern value="Collection.map.HashMapTest" method="testContainsValue" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testContainsValue" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testContainsValue" />
+    <pattern value="Collection.map.TreeMapTest" method="testContainsValue" />
+    <pattern value="generic.BFSAndDFSTest" method="testDeep" />
+    <pattern value="generic.QuicksortTest" method="testEmpty" />
+    <pattern value="Collection.StackTest" method="testEmpty" />
+    <pattern value="Collection.map.EnumMapTest" method="testEntrySet" />
+    <pattern value="Collection.map.HashMapTest" method="testEntrySet" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testEntrySet" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testEntrySet" />
+    <pattern value="Collection.map.TreeMapTest" method="testEntrySet" />
+    <pattern value="Collection.map.WeakHashMapTest" method="testEntrySet" />
+    <pattern value="Collection.set.EnumSetTest" method="testEquals" />
+    <pattern value="Collection.map.TreeMapTest" method="testEquals" />
+    <pattern value="Collection.set.TreeSetTest" method="testEquals" />
+    <pattern value="generic.BinarySearchTest" method="testFails" />
+    <pattern value="Collection.set.TreeSetTest" method="testFirst" />
+    <pattern value="Collection.map.TreeMapTest" method="testFirstKey" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testGet" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testGet" />
+    <pattern value="Collection.set.TreeSetTest" method="testHeadSet" />
+    <pattern value="Collection.map.TreeMapTest" method="testInvalidKeys" />
+    <pattern value="Collection.ArrayDequeTest" method="testIsEmpty" />
+    <pattern value="Collection.map.HashMapTest" method="testIsEmpty" />
+    <pattern value="Collection.set.HashSetTest" method="testIsEmpty" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testIsEmpty" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testIsEmpty" />
+    <pattern value="Collection.ListTest" method="testIsEmpty" />
+    <pattern value="Collection.set.SetExampleTest" method="testIsEmpty" />
+    <pattern value="Collection.set.TreeSetTest" method="testIsEmpty" />
+    <pattern value="Collection.map.WeakHashMapTest" method="testIsEmpty" />
+    <pattern value="Collection.ArrayDequeTest" method="testIterator" />
+    <pattern value="Collection.set.HashSetTest" method="testIterator" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="testIterator" />
+    <pattern value="Collection.PriorityQueueTest" method="testIterator" />
+    <pattern value="Collection.set.TreeSetTest" method="testIterator" />
+    <pattern value="Collection.map.EnumMapTest" method="testKeySet" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testKeySet" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testKeySet" />
+    <pattern value="Collection.map.WeakHashMapTest" method="testKeySet" />
+    <pattern value="Collection.set.TreeSetTest" method="testLast" />
+    <pattern value="Collection.map.TreeMapTest" method="testLastKey" />
+    <pattern value="Collection.LinkedListTest" method="testListIteratorI" />
+    <pattern value="generic.QuicksortTest" method="testNull" />
+    <pattern value="Collection.LinkedListTest" method="testPeek" />
+    <pattern value="Collection.PriorityQueueTest" method="testPeek" />
+    <pattern value="Collection.StackTest" method="testPeek" />
+    <pattern value="Collection.ArrayDequeTest" method="testPeekFirst" />
+    <pattern value="Collection.ArrayDequeTest" method="testPeekLast" />
+    <pattern value="Collection.PriorityQueueTest" method="testPoll" />
+    <pattern value="Collection.ArrayDequeTest" method="testPollFirst" />
+    <pattern value="Collection.ArrayDequeTest" method="testPollLast" />
+    <pattern value="Collection.ArrayDequeTest" method="testPop" />
+    <pattern value="Collection.StackTest" method="testPop" />
+    <pattern value="Collection.StackTest" method="testPopModifyElement" />
+    <pattern value="Collection.ArrayDequeTest" method="testPush" />
+    <pattern value="Collection.StackTest" method="testPush" />
+    <pattern value="Collection.map.EnumMapTest" method="testPut" />
+    <pattern value="Collection.map.HashMapTest" method="testPut" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testPut" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testPut" />
+    <pattern value="Collection.map.WeakHashMapTest" method="testPut" />
+    <pattern value="Collection.map.HashMapTest" method="testPutAll" />
+    <pattern value="Collection.map.TreeMapTest" method="testPutAll" />
+    <pattern value="generic.BFSAndDFSTest" method="testQueue" />
+    <pattern value="Collection.set.QueueExampleTests" method="testQueueIsEmpty" />
+    <pattern value="Collection.set.QueueExampleTests" method="testQueueIsNotEmpty" />
+    <pattern value="Collection.set.QueueExampleTests" method="testQueueSize" />
+    <pattern value="generic.QuicksortTest" method="testQuickSort" />
+    <pattern value="Collection.map.EnumMapTest" method="testRemove" />
+    <pattern value="Collection.set.EnumSetTest" method="testRemove" />
+    <pattern value="Collection.map.HashMapTest" method="testRemove" />
+    <pattern value="Collection.set.HashSetTest" method="testRemove" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testRemove" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testRemove" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="testRemove" />
+    <pattern value="Collection.LinkedListTest" method="testRemove" />
+    <pattern value="Collection.ListTest" method="testRemove" />
+    <pattern value="Collection.PriorityQueueTest" method="testRemove" />
+    <pattern value="Collection.set.SetExampleTest" method="testRemove" />
+    <pattern value="Collection.map.TreeMapTest" method="testRemove" />
+    <pattern value="Collection.set.TreeSetTest" method="testRemove" />
+    <pattern value="Collection.map.WeakHashMapTest" method="testRemove" />
+    <pattern value="Collection.ArrayDequeTest" method="testRemoveFirst" />
+    <pattern value="Collection.LinkedListTest" method="testRemoveFirst" />
+    <pattern value="Collection.ArrayDequeTest" method="testRemoveLast" />
+    <pattern value="Collection.LinkedListTest" method="testRemoveLast" />
+    <pattern value="Collection.ListTest" method="testReplace" />
+    <pattern value="Collection.StackTest" method="testSearch" />
+    <pattern value="generic.QuicksortTest" method="testSimpleElement" />
+    <pattern value="Collection.ArrayDequeTest" method="testSize" />
+    <pattern value="Collection.ArrayListTest" method="testSize" />
+    <pattern value="Collection.map.EnumMapTest" method="testSize" />
+    <pattern value="Collection.set.EnumSetTest" method="testSize" />
+    <pattern value="Collection.map.HashMapTest" method="testSize" />
+    <pattern value="Collection.set.HashSetTest" method="testSize" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testSize" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testSize" />
+    <pattern value="Collection.set.LinkedHashSetTest" method="testSize" />
+    <pattern value="Collection.ListTest" method="testSize" />
+    <pattern value="Collection.PriorityQueueTest" method="testSize" />
+    <pattern value="Collection.set.SetExampleTest" method="testSize" />
+    <pattern value="Collection.map.TreeMapTest" method="testSize" />
+    <pattern value="Collection.set.TreeSetTest" method="testSize" />
+    <pattern value="generic.QuicksortTest" method="testSpecial" />
+    <pattern value="generic.BFSAndDFSTest" method="testStack" />
+    <pattern value="generic.QuicksortTest" method="testStandardSort" />
+    <pattern value="Collection.map.TreeMapTest" method="testSubMapIterator" />
+    <pattern value="generic.BinarySearchTest" method="testSuccessSearch" />
+    <pattern value="Collection.map.EnumMapTest" method="testValues" />
+    <pattern value="Collection.map.HashMapTest" method="testValues" />
+    <pattern value="Collection.map.IdentityHashMapTest" method="testValues" />
+    <pattern value="Collection.map.LinkedHashMapTest" method="testValues" />
+    <pattern value="Collection.map.TreeMapTest" method="testValues" />
+    <pattern value="Collection.map.WeakHashMapTest" method="testValues" />
+    <pattern value="generic.BFSAndDFSTest" method="testWide" />
+    <pattern value="Collection.PriorityQueueTest" method="testСlear" />
+    <pattern value="generic.util.TreeNode" />
+    <pattern value="generic.BFSAndDFS" method="wide" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11.0.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
