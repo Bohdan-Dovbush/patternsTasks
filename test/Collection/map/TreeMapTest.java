@@ -113,6 +113,148 @@ public class TreeMapTest extends TestCase {
     }
 
     @Test
+    public void testGet() {
+        Object o = new Object();
+        tm.put("Hello", o);
+        assertSame("Failed to get mapping", tm.get("Hello"), o);
+        // Test for the same key & same value
+        tm = new TreeMap();
+        Object o2 = new Object();
+        Integer key1 = 1;
+        Integer key2 = 2;
+        assertNull(tm.put(key1, o));
+        assertNull(tm.put(key2, o));
+        assertEquals(2, tm.values().size());
+        assertEquals(2, tm.keySet().size());
+        assertSame(tm.get(key1), tm.get(key2));
+        assertSame(o, tm.put(key1, o2));
+        assertSame(o2, tm.get(key1));
+    }
+
+    @Test
+    public void testHeadMap() {
+        Map head = tm.headMap("100");
+        assertEquals("Returned map of incorrect size", 3, head.size());
+        assertTrue("Returned incorrect elements", head.containsKey("0")
+                && head.containsValue(1)
+                && head.containsKey("10"));
+        TreeMap<Integer, Double> map = new TreeMap<>();
+        map.put(1, 2.1);
+        map.put(2, 3.1);
+        map.put(3, 4.5);
+        map.put(7, 21.3);
+        map.put(null, null);
+        SortedMap<Integer, Double> smap = map.headMap(null);
+        assertEquals(0, smap.size());
+        Set<Integer> keySet = smap.keySet();
+        assertEquals(0, keySet.size());
+        Set<Map.Entry<Integer, Double>> entrySet = smap.entrySet();
+        assertEquals(0, entrySet.size());
+        Collection<Double> valueCollection = smap.values();
+        assertEquals(0, valueCollection.size());
+        SortedMap<Integer, Integer> intMap, sub;
+        int size = 16;
+        intMap = new TreeMap<>();
+        for (int i = 0; i < size; i++) {
+            intMap.put(i, i);
+        }
+        sub = intMap.headMap(-1);
+        assertEquals("size should be zero", sub.size(), 0);
+        assertTrue("submap should be empty", sub.isEmpty());
+        try {
+            sub.firstKey();
+            fail("java.util.NoSuchElementException should be thrown");
+        } catch (java.util.NoSuchElementException e) {//
+        }
+        TreeMap t = new TreeMap();
+        try {
+            SortedMap th = t.headMap(null);
+            assertNull(th);
+            fail("Should throw a NullPointerException");
+        } catch (NullPointerException npe) {
+            // expected
+        }
+        try {
+            sub.lastKey();
+            fail("java.util.NoSuchElementException should be thrown");
+        } catch (java.util.NoSuchElementException e) {//
+        }
+        size = 256;
+        intMap = new TreeMap<>();
+        for (int i = 0; i < size; i++) {
+            intMap.put(i, i);
+        }
+        sub = intMap.headMap(-1);
+        assertEquals("size should be zero", sub.size(), 0);
+        assertTrue("submap should be empty", sub.isEmpty());
+        try {
+            sub.firstKey();
+            fail("java.util.NoSuchElementException should be thrown");
+        } catch (java.util.NoSuchElementException e) {//
+        }
+        try {
+            sub.lastKey();
+            fail("java.util.NoSuchElementException should be thrown");
+        } catch (java.util.NoSuchElementException e) {//
+        }
+    }
+
+    @Test
+    public void testTailMap() {
+        Map tail = tm.tailMap(objArray[900].toString());
+        assertEquals("Returned map of incorrect size : " + tail.size(), tail
+                .size(), (objArray.length - 900) + 9);
+        for (int i = 900; i < objArray.length; i++) {
+            assertTrue("Map contains incorrect entries", tail.containsValue(objArray[i]));
+        }
+        SortedMap<Integer, Integer> intMap, sub;
+        int size = 16;
+        intMap = new TreeMap<>();
+        for (int i = 0; i < size; i++) {
+            intMap.put(i, i);
+        }
+        sub = intMap.tailMap(size);
+        assertEquals("size should be zero", sub.size(), 0);
+        assertTrue("submap should be empty", sub.isEmpty());
+        try {
+            sub.firstKey();
+            fail("java.util.NoSuchElementException should be thrown");
+        } catch (java.util.NoSuchElementException e) {//
+        }
+        TreeMap t = new TreeMap();
+        try {
+            SortedMap th = t.tailMap(null);
+            assertNull(th);
+            fail("Should throw a NullPointerException");
+        } catch (NullPointerException npe) {
+            // expected
+        }
+        try {
+            sub.lastKey();
+            fail("java.util.NoSuchElementException should be thrown");
+        } catch (java.util.NoSuchElementException e) {//
+        }
+        size = 256;
+        intMap = new TreeMap<>();
+        for (int i = 0; i < size; i++) {
+            intMap.put(i, i);
+        }
+        sub = intMap.tailMap(size);
+        assertEquals("size should be zero", sub.size(), 0);
+        assertTrue("submap should be empty", sub.isEmpty());
+        try {
+            sub.firstKey();
+            fail("java.util.NoSuchElementException should be thrown");
+        } catch (java.util.NoSuchElementException e) {//
+        }
+        try {
+            sub.lastKey();
+            fail("java.util.NoSuchElementException should be thrown");
+        } catch (java.util.NoSuchElementException e) {//
+        }
+    }
+
+    @Test
     public void testPutAll() {
         TreeMap x = new TreeMap();
         x.putAll(tm);

@@ -32,6 +32,26 @@ public class WeakHashMapTest extends TestCase {
     }
 
     @Test
+    public void testContainsKey() {
+        for (int i = 0; i < 100; i++)
+            whm.put(keyArray[i], valueArray[i]);
+        for (int i = 0; i < 100; i++)
+            assertTrue("Should contain referenced key", whm.containsKey(keyArray[i]));
+        keyArray[25] = null;
+        keyArray[50] = null;
+    }
+
+    @Test
+    public void testContainsValue() {
+        for (int i = 0; i < 100; i++)
+            whm.put(keyArray[i], valueArray[i]);
+        for (int i = 0; i < 100; i++)
+            assertTrue("Should contain referenced value", whm.containsValue(valueArray[i]));
+        keyArray[25] = null;
+        keyArray[50] = null;
+    }
+
+    @Test
     public void testEntrySet() {
         for (int i = 0; i < 100; i++)
             whm.put(keyArray[i], valueArray[i]);
