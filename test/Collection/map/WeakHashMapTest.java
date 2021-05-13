@@ -51,7 +51,6 @@ public class WeakHashMapTest extends TestCase {
         int count = 0;
         do {
             System.gc();
-            System.gc();
             count++;
         } while (count <= 5 && entrySet.size() == 100);
         assertEquals("Incorrect number of entries returned after gc--wanted 99, got: "
@@ -71,7 +70,6 @@ public class WeakHashMapTest extends TestCase {
     @Test
     public void testPut() {
         whm.put(null, "value"); // add null key
-        System.gc();
         System.gc();
         whm.remove("nothing"); // Cause objects in queue to be removed
         assertEquals("null key was removed", 1, whm.size());
@@ -101,7 +99,6 @@ public class WeakHashMapTest extends TestCase {
         int count = 0;
         do {
             System.gc();
-            System.gc();
             count++;
         } while (count <= 5 && keySet.size() == 100);
         assertEquals("Incorrect number of keys returned after gc,", 99, keySet.size());
@@ -122,7 +119,6 @@ public class WeakHashMapTest extends TestCase {
         keyArray[50] = null;
         int count = 0;
         do {
-            System.gc();
             System.gc();
             count++;
         } while (count <= 5 && valuesCollection.size() == 100);
